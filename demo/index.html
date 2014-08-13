@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>backbone-truncatetext demo</title>
+<meta name="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="demo.css" />
+</head>
+<body>
+<div class="container">
+<div class="textbox">
+Lorem Ipsum is simply dummyyyyyyyyyyyyyyyyyyyy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+<!--/.textbox--></div>
+
+set lines: <input type="number" name="lines" id="lines" value="2"><br />
+<br />
+<button name="truncate" id="truncate">Truncate</button><br />
+<br />
+<br />
+textbox width value: <input type="text" name="textboxwidth" id="textboxwidth" value="0"><br />
+textbox height value: <input type="text" name="textboxheight" id="textboxheight" value="0"><br />
+<br />
+<!--/.container--></div>
+
+<script src="./jquery.min.js"></script>
+<script src="./underscore.js"></script>
+<script src="./backbone.js"></script>
+<script src="../dist/truncatetext.js"></script>
+<script>
+var tt = new $.TruncateText({
+  el: '.textbox',
+  line: 2
+});
+$('#truncate').on('click', function() {
+  tt.setLine(parseInt($('#lines').val(), 10));
+  tt.run();
+  $('#textboxwidth').val($('.textbox').width());
+  $('#textboxheight').val($('.textbox').height());
+});
+</script>
+</body>
+</html>
