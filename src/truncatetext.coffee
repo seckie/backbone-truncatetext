@@ -1,9 +1,16 @@
-'use strict'
-((Backbone, _, $, window, document) ->
+###
+ * $.TruncateText
+ *
+ * @author     Naoki Sekiguchi
+ * @license    MIT
+ * @require    jquery.js, underscore.js, backbone.js
+ *
+ * truncate some texts that overflow specified lines. and insert "…"
+###
 
-  ###
-  truncate some texts that overflow specified lines. and insert "…"
-  ###
+((Backbone, _, $, window, document) ->
+  'use strict'
+
   $.TruncateText = Backbone.View.extend(
 
     initialize: (options) ->
